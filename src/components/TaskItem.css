@@ -1,0 +1,39 @@
+.task-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .task-card h3 {
+    margin-top: 0;
+  }
+  
+  .task-card.pending {
+    background-color: #ffcccb; /* Light red */
+  }
+  
+  .task-card.inprogress {
+    background-color: #ffffcc; /* Light yellow */
+  }
+  
+  .task-card.completed {
+    background-color: #90ee90; /* Light green */
+  }
+  
+  .task-card.deployed {
+    background-color: #87cefa; /* Light sky blue */
+  }
+  
+  .task-card.deferred {
+    background-color: #d3d3d3; /* Light grey */
+  }
+  
+  .task-card h4 {
+    margin-bottom: 5px;
+  }
+  
+  .task-card button {
+    margin-top: 10px;
+  }
+  

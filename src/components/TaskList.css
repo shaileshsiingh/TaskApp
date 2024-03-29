@@ -1,0 +1,10 @@
+.task-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .task-list > * {
+    flex: 1 1 calc(50% - 20px); /* 50% width with 20px spacing */
+    margin: 10px;
+  }
+  
