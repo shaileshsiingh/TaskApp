@@ -1,18 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import NewTaskModal from './NewTaskModal';
+import { useTaskContext } from './TaskContext';
 
-function NewTaskButton({ onCreate }) {
-  const [showModal, setShowModal] = useState(false);
-
-  const handleCreate = (taskData) => {
-    onCreate(taskData);
-    setShowModal(false);
-  };
+function NewTaskButton() {
+  const { showModal, toggleModal } = useTaskContext();
 
   return (
     <div>
-      <button onClick={() => setShowModal(true)}>Create a New Task</button>
-      {showModal && <NewTaskModal onClose={() => setShowModal(false)} onCreate={handleCreate} />}
+      <button onClick={toggleModal}>Create a New Task</button>
+      {showModal && <NewTaskModal />}
     </div>
   );
 }

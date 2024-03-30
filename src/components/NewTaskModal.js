@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import './NewTaskModal.css'; // Add CSS for styling
+import { useTaskContext } from './TaskContext';
 
-function NewTaskModal({ onClose, onCreate }) {
+function NewTaskModal() {
+  const { addTask, toggleModal } = useTaskContext();
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -17,14 +18,14 @@ function NewTaskModal({ onClose, onCreate }) {
   };
 
   const handleSubmit = () => {
-    // Add validation logic here if required
-    onCreate(formData);
+    addTask(formData);
+    toggleModal(); // Close the modal after adding task
   };
 
   return (
     <div className="modal-overlay">
       <div className="modal">
-        <button className="close-btn" onClick={onClose}>X</button>
+        <button className="close-btn" onClick={toggleModal}>X</button>
         <h2>Create New Task</h2>
         <div className="modal-content">
           <div>
